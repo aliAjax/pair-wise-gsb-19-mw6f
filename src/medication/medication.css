@@ -1,0 +1,643 @@
+/* 用药与停药期管理 —— 独立样式（不修改水质监测页既有样式） */
+
+.medication-page {
+  margin-top: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.med-page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  border-left: 6px solid var(--warn);
+}
+
+.med-page-head h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.med-page-desc {
+  color: #526070;
+  line-height: 1.7;
+  margin-bottom: 0;
+  max-width: 820px;
+}
+
+.med-reset {
+  color: #b91c1c;
+  border-color: color-mix(in srgb, #e11d48 40%, var(--border));
+  white-space: nowrap;
+}
+
+.med-toast {
+  background: color-mix(in srgb, var(--accent) 12%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+  color: #166534;
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.med-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+.med-main-col,
+.med-side-col {
+  display: grid;
+  gap: 18px;
+}
+
+.med-panel h2 {
+  font-size: 19px;
+}
+
+.med-panel h4 {
+  font-size: 14px;
+  margin: 16px 0 8px;
+}
+
+.med-count {
+  color: #64748b;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.med-row-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ---- 批量登记表 ---- */
+
+.med-form-list {
+  display: grid;
+  gap: 14px;
+}
+
+.med-form-row {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  background: #fbfdff;
+}
+
+.med-form-row.has-error {
+  border-color: color-mix(in srgb, #e11d48 55%, var(--border));
+  background: color-mix(in srgb, #e11d48 4%, #fbfdff);
+}
+
+.med-form-row > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.med-row-no {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 13px;
+}
+
+.med-link-danger {
+  border: none;
+  background: none;
+  color: #e11d48;
+  min-height: auto;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.med-link-danger:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.med-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.med-form-grid label small {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.med-panel select,
+.med-panel textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0 12px;
+  color: #172033;
+  background: #ffffff;
+  min-height: 42px;
+  font: inherit;
+}
+
+.med-panel textarea {
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.med-row-errors {
+  margin: 10px 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: #9f1239;
+}
+
+.med-row-errors li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.med-hint {
+  margin: 12px 0 0;
+  color: #64748b;
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+/* ---- 整批拒绝提示 ---- */
+
+.med-block {
+  border: 1px solid color-mix(in srgb, #e11d48 55%, var(--border));
+  background: color-mix(in srgb, #e11d48 6%, #ffffff);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.med-block h3 {
+  margin: 0 0 10px;
+  color: #be123c;
+  font-size: 15px;
+}
+
+.med-block ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.med-block li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.med-block-target {
+  font-weight: 700;
+  color: #172033;
+}
+
+.med-shortfall {
+  font-weight: 800;
+  color: #b91c1c;
+  background: color-mix(in srgb, #e11d48 12%, #ffffff);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.med-block-detail {
+  color: #526070;
+  flex-basis: 100%;
+  padding-left: 2px;
+}
+
+.med-tag {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tag-fields {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.tag-open-course {
+  background: color-mix(in srgb, var(--warn) 18%, #ffffff);
+  color: #92400e;
+}
+
+.tag-over-cap {
+  background: color-mix(in srgb, #e11d48 14%, #ffffff);
+  color: #be123c;
+}
+
+.tag-stock {
+  background: color-mix(in srgb, #e11d48 16%, #ffffff);
+  color: #b91c1c;
+}
+
+.tag-version {
+  background: color-mix(in srgb, var(--primary) 14%, #ffffff);
+  color: #0e7490;
+}
+
+/* ---- 疗程卡片 ---- */
+
+.med-empty {
+  color: #64748b;
+  margin: 8px 0 0;
+}
+
+.med-course-list {
+  display: grid;
+  gap: 12px;
+}
+
+.med-course {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  background: #fbfdff;
+}
+
+.med-course.active {
+  border-left: 5px solid var(--accent);
+}
+
+.med-course.closed {
+  border-left: 5px solid #94a3b8;
+  opacity: 0.86;
+}
+
+.med-course > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.med-course h3 {
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.med-course-sub {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.med-badge {
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge-active {
+  background: color-mix(in srgb, var(--accent) 15%, #ffffff);
+  color: #166534;
+}
+
+.badge-closed {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.med-course-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px 14px;
+  margin: 0 0 10px;
+}
+
+.med-course-facts dt {
+  color: #64748b;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.med-course-facts dd {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.med-postpone {
+  color: #b45309 !important;
+  font-weight: 800;
+}
+
+.med-water-summary {
+  margin: 0 0 10px;
+  padding: 8px 12px;
+  list-style: none;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--warn) 8%, #ffffff);
+  display: grid;
+  gap: 4px;
+  font-size: 12.5px;
+  color: #7c4a03;
+}
+
+.med-course-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.med-link-btn {
+  border: none;
+  background: none;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* ---- 换水 / 撤药内联面板 ---- */
+
+.med-action-panel {
+  margin-top: 12px;
+  border: 1px solid color-mix(in srgb, var(--warn) 40%, var(--border));
+  border-radius: 8px;
+  padding: 14px;
+  background: color-mix(in srgb, var(--warn) 5%, #ffffff);
+  display: grid;
+  gap: 10px;
+}
+
+.med-action-panel h4 {
+  margin: 0;
+}
+
+.med-warn-text {
+  margin: 0;
+  color: #7c4a03;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.med-confirm-line {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13.5px;
+}
+
+.med-confirm-line input {
+  width: auto;
+  min-height: 0;
+  margin-top: 3px;
+}
+
+.med-inline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.med-span2 {
+  grid-column: span 2;
+}
+
+.med-preview {
+  margin: 0;
+  font-size: 13.5px;
+  color: #166534;
+}
+
+.med-row-error-text {
+  margin: 0;
+  color: #be123c;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.med-pause {
+  margin: 10px 0 0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--warn) 12%, #ffffff);
+  color: #7c4a03;
+  font-size: 13.5px;
+}
+
+/* ---- 历史版本 ---- */
+
+.med-history {
+  margin-top: 12px;
+  border: 1px solid color-mix(in srgb, var(--primary) 35%, var(--border));
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.med-history > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.med-history h4 {
+  margin: 0;
+}
+
+.med-version-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.med-version {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.ver-created {
+  background: #fbfdff;
+}
+
+.ver-early-stop {
+  background: color-mix(in srgb, var(--warn) 7%, #ffffff);
+}
+
+.ver-scheduled-complete {
+  background: color-mix(in srgb, #94a3b8 8%, #ffffff);
+}
+
+.med-version-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.med-version-head time {
+  color: #64748b;
+  margin-left: auto;
+}
+
+.med-version-reason {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #334155;
+}
+
+.med-version-snapshot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 6px 12px;
+  margin: 0;
+}
+
+.med-version-snapshot dt {
+  color: #94a3b8;
+  font-size: 11.5px;
+}
+
+.med-version-snapshot dd {
+  margin: 0;
+  font-size: 12.5px;
+}
+
+/* ---- 换水流水 ---- */
+
+.med-log-title {
+  margin-top: 18px;
+}
+
+.med-water-log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.med-water-log li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  background: #fbfdff;
+}
+
+.med-water-log li.linked {
+  border-left: 4px solid var(--warn);
+}
+
+.med-water-log li strong {
+  min-width: 70px;
+}
+
+.med-log-note {
+  color: #64748b;
+  flex-basis: 100%;
+}
+
+/* ---- 侧栏资料 ---- */
+
+.med-ref-list {
+  list-style: none;
+  margin: 0 0 6px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.med-ref-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  align-items: baseline;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 6px;
+  font-size: 13px;
+}
+
+.med-ref-list li strong {
+  flex-basis: 100%;
+}
+
+.med-ref-list li span {
+  color: #64748b;
+}
+
+.med-cap {
+  color: #0e7490 !important;
+  font-weight: 700;
+}
+
+.med-stock {
+  font-weight: 700;
+  color: #166534;
+}
+
+.med-stock.low {
+  color: #b91c1c;
+}
+
+.med-rules ol {
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* ---- 响应式 ---- */
+
+@media (max-width: 980px) {
+  .med-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .med-form-grid,
+  .med-inline-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .med-form-grid,
+  .med-inline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .med-span2 {
+    grid-column: auto;
+  }
+
+  .med-page-head {
+    flex-direction: column;
+  }
+}

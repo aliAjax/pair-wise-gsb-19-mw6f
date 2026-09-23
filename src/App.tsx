@@ -1,4 +1,5 @@
 import "./styles.css";
+import MedicationPage from "./medication/MedicationPage";
 
 const project = {
   "id": "hxwl-05",
@@ -153,6 +154,8 @@ function App() {
           ))}
         </div>
       </section>
+
+      <MedicationPage />
     </main>
   );
 }
