@@ -1,4 +1,5 @@
 import "./styles.css";
+import MedicationPanel from "./medication/MedicationPanel";
 
 const project = {
   "id": "hxwl-05",
@@ -132,6 +133,8 @@ function App() {
           </div>
         </section>
       </section>
+
+      <MedicationPanel />
 
       <section className="records panel">
         <div className="section-heading">

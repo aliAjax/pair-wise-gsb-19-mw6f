@@ -223,6 +223,310 @@ input {
   color: #172033;
 }
 
+/* ===== 用药与停药期管理 ===== */
+
+.med-panel {
+  margin-bottom: 20px;
+}
+
+.med-stock-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  max-width: 460px;
+}
+
+.med-stock-summary span {
+  font-size: 12px;
+  color: #526070;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #fbfdff;
+}
+
+.med-stock-summary .stock-low {
+  border-color: #fecdd3;
+  background: #fff1f2;
+  color: #e11d48;
+}
+
+.med-batch-head,
+.med-batch-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.3fr 0.7fr 1.2fr 0.8fr 0.5fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.med-batch-head {
+  font-size: 12px;
+  color: #64748b;
+  padding: 0 2px 6px;
+}
+
+.med-batch-rows {
+  display: grid;
+  gap: 10px;
+}
+
+.med-batch-row select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0 8px;
+  background: #ffffff;
+  font: inherit;
+  color: #172033;
+}
+
+.med-batch-row input {
+  min-height: 42px;
+}
+
+.med-row-del {
+  min-height: 38px;
+  color: #e11d48;
+  padding: 0 8px;
+}
+
+.med-batch-actions {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.med-feedback {
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.med-feedback ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.med-feedback.ok {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.med-feedback.reject {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239;
+}
+
+.med-deficits {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.deficit-tag {
+  background: #e11d48;
+  color: #fff;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+.med-courses {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.med-courses h3 {
+  margin: 8px 0 0;
+}
+
+.med-empty {
+  color: #64748b;
+  margin: 0;
+}
+
+.med-course {
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  border-radius: 8px;
+  padding: 16px;
+  background: #fbfdff;
+}
+
+.med-course.status-completed {
+  border-left-color: var(--accent);
+  opacity: 0.85;
+}
+
+.med-course.status-stopped-early {
+  border-left-color: var(--warn);
+}
+
+.med-course.overdue {
+  border-left-color: #e11d48;
+}
+
+.med-course > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.med-course > header > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.med-badge {
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 3px 10px;
+  background: color-mix(in srgb, var(--primary) 12%, #fff);
+  color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, #fff);
+}
+
+.med-course.status-completed .med-badge {
+  background: #f0fdf4;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.med-course.status-stopped-early .med-badge {
+  background: #fffbeb;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.med-course.overdue .med-badge {
+  background: #fff1f2;
+  color: #9f1239;
+  border-color: #fecdd3;
+}
+
+.med-course-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 18px;
+  margin: 0 0 12px;
+}
+
+.med-course-info dt {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.med-course-info dd {
+  margin: 2px 0 0;
+}
+
+.med-postpone-list {
+  margin: 0 0 12px;
+  padding-left: 18px;
+  color: #92400e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.med-stop-reason {
+  margin: 0 0 12px;
+  color: #92400e;
+  font-size: 13px;
+}
+
+.med-course-actions {
+  display: grid;
+  gap: 12px;
+  border-top: 1px dashed var(--border);
+  padding-top: 12px;
+}
+
+.med-water {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.med-water label {
+  gap: 4px;
+}
+
+.med-field-error {
+  grid-column: 1 / -1;
+  color: #e11d48;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.med-action-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.med-stop-form {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.med-stop-form input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.med-versions {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #334155;
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 12px 12px 12px 32px;
+}
+
+.med-versions li div:last-child {
+  color: #64748b;
+}
+
+@media (max-width: 860px) {
+  .med-batch-head {
+    display: none;
+  }
+
+  .med-batch-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .med-batch-row .med-row-del {
+    grid-column: 1 / -1;
+  }
+
+  .med-course-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .med-water {
+    grid-template-columns: 1fr;
+  }
+}
+
 .record-list {
   display: grid;
   gap: 12px;
